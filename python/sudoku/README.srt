@@ -1,0 +1,1 @@
+This is function evaluates a Sudoku board. The function validate receives a 2D array representing a Sudoku Board. It returns True if the board is valid or False if it is not.
