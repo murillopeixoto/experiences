@@ -1,7 +1,10 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 include 'caesar_cypher.php';
-class CaesarCypherTest extends \PHPUnit_Framework_TestCase
+
+class CaesarCypherTest extends TestCase
 {
     public function setUp()
     {

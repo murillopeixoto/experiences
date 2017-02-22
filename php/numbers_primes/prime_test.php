@@ -1,7 +1,9 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 include 'prime.php';
-class PrimeTest extends \PHPUnit_Framework_TestCase
+class PrimeTest extends TestCase
 {
     /**
      * @dataProvider addDataProvider
