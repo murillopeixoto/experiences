@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-include 'prime.php';
+include 'Prime.php';
 class PrimeTest extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ class PrimeTest extends TestCase
         $this->assertEquals($n, count($firstsNPrimes));
     }
 
-    public function addDataProvider()
+    public function addDataProvider(): array
     {
         return [
             [1, [2]],

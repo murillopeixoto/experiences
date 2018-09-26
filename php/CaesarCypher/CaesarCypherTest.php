@@ -21,7 +21,7 @@ class CaesarCypherTest extends TestCase
         $this->assertEquals($messageShifted, $expected);
     }
 
-    public function addDataProvider()
+    public function addDataProvider(): array
     {
         return [
             ['abcd', 1, false, 'bcde'],

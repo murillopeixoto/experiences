@@ -14,11 +14,11 @@ class CaesarCypher
         ]
     ];
 
-    public function shiftMessage($message, $shift=3, $left=false)
+    public function shiftMessage($message, $shift=3, $left=false): String
     {
         $shift = $this->normalizeShiftSize($shift);
         if ($left) {
-            $shift = -$shift;
+            $shift =- $shift;
         }
 
         $shifted = [];
@@ -29,7 +29,7 @@ class CaesarCypher
         return implode($shifted);
     }
 
-    private function moving($char, $shift)
+    private function moving($char, $shift): String
     {
         $case = $this->getCase($char);
         if (!$case) {
@@ -46,20 +46,22 @@ class CaesarCypher
         return chr($position);
     }
 
-    private function getCase($char)
+    private function getCase($char): String
     {
         if (ord($char) >= self::ORDER_POINTS['upper']['begin'] &&
                 ord($char) <= self::ORDER_POINTS['upper']['end']) {
             return 'upper';
-        } elseif (ord($char) >= self::ORDER_POINTS['lower']['begin'] &&
+        } 
+
+        if (ord($char) >= self::ORDER_POINTS['lower']['begin'] &&
                 ord($char) <= self::ORDER_POINTS['lower']['end']) {
             return 'lower';
-        } else {
-            return false;
         }
+        
+        return false;
     }
 
-    private function normalizeShiftSize($shift)
+    private function normalizeShiftSize($shift): String
     {
         while ($shift > self::ALPHABET_SIZE) {
             $shift = $shift - self::ALPHABET_SIZE;
